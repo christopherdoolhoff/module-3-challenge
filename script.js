@@ -1,6 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var random = ({
+  uppers:randomUpperCaseLetter,
+  lowers: randomLowerCaseLetter,
+  number:  randomNumber,
+  symbols: randomSymbol
+})
+
 // Random Upper Case Letter Function
 function randomUpperCaseLetter () {
   return String.fromCharCode(Math.floor(Math.random()*26)+65);
@@ -28,6 +35,15 @@ console.log(randomLowerCaseLetter());
 console.log(randomNumber());
 console.log(randomSymbol());
 
+// Generate password function
+function generatePassword(uppers, lowers, numbers, symbols, length) {
+  var generatePassword = "";
+  var passwordTypes = uppers + lowers + numbers + symbols;
+  var passwordArr = [{uppers}, {lowers}, {numbers}, {symbols}].filter
+  (
+    item => Object.values(item)[0]
+  );
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -40,3 +56,8 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+// generateBtn.addEventListener("click", () => {
+//   window.confirm("The computer chose ");
+// });
